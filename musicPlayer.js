@@ -3,7 +3,13 @@ var menuList = document.getElementsByClassName('menuOption')
 var nav = document.getElementsByTagName('nav')[0]
 var menuListArray = Array.from(menuList)
 
+var mainBtnRight = document.getElementById('right')
+var mainBtnLeft = document.getElementById('left')
+var container = document.getElementsByClassName('container')[0]
+
 menuBtn.addEventListener('click',showMenu)
+mainBtnRight.addEventListener('click',passRight)
+mainBtnLeft.addEventListener('click',passLeft)
 
 var aux = true
 function showMenu(){
@@ -29,4 +35,14 @@ var i = menuListArray.length - 1
 function appear(){
     menuListArray[i].style.opacity = '1'
     i--
+}
+
+var scroll = 0
+function passRight(){
+    scroll += 480
+    container.scroll(scroll,0)
+}
+function passLeft(){
+    scroll -= 480
+    container.scroll(scroll,0)
 }

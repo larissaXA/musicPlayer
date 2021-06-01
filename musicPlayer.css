@@ -121,3 +121,87 @@ header{
     background-color: violet;
     transform: rotateZ(-30deg) translateY(-0.65rem);
 }
+
+main{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container{
+    height: 30rem;
+    width: 30rem;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+.songBox{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.img-opt{
+    background-color: transparent;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.cover{
+    background-color: transparent;
+    height: 90%;
+    width: 100%;
+}
+.cover img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+.options{
+    align-self: flex-start;
+}
+.options:hover{
+    cursor: pointer;
+}
+
+.texts{
+    background-color: transparent;
+    width: 70%;
+    display: grid;
+    place-items: center;
+    color: mediumvioletred;
+    text-shadow: 1px 1px 2px black;
+    text-transform: capitalize;
+    font-style: oblique;
+    margin-bottom: 3%;
+}
+.songName{
+    font-size:170%;
+}
+.songAuthor{
+    font-size: 130%;
+}
+
+audio{
+    width: 70%;
+    height: 10%;
+}
+
+main button{
+    background-color: chartreuse;
+    height: 10vw;
+    width: 10vw;
+}
