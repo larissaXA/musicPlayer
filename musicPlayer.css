@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+    background-color: #c71585;
+    background-image: linear-gradient(0deg, #c71585 0%, #000000 95%);
+}
+
+header{
+    background-color: olive;
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#themeContainer{
+    background-color: orangered;
+    border: .3rem solid yellow;
+    border-radius: 100%;
+    height: 70%;
+    width: calc(0.7*10vh);
+    position: relative;
+    left: calc((10vh/2) - 1.5vw);
+    display: grid;
+    place-items: center;
+}
+#themeChild{
+    background-color: yellow;
+    border-radius: 100%;
+    height: 70%;
+    width: 70%;
+}
+
+.menu{
+    background-color: yellow;
+    height: 100%;
+    width: 50vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.menu nav{
+    height: 100%;
+    width: 80%;
+    background-color: tomato;
+    display: none;
+}
+.menu nav ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+}
+.menu nav ul li{
+    background-color: teal;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.menu nav ul li:hover{
+    cursor: pointer;
+}
+.menu nav ul li div{
+    transition: all .3s ease-in;
+    background-color: thistle;
+    height: fit-content;
+    width: fit-content;
+    transform : translateY(10px);
+}
+.menu nav ul li div .menuImg{
+    height: 1.4rem;
+}
+.menu nav ul li .menuLabel{
+    transform : translateY(10px);
+    opacity: 0;
+}
+.menu nav ul li:hover .menuImg{
+    transition: all .3s ease-in;
+    transform: translateY(0);
+}
+.menu nav ul li:hover .menuLabel{
+    transition: all .3s ease-in;
+    opacity: 1;
+}
+
+.menu button{
+    background-color: turquoise;
+    height: 100%;
+    width: fit-content;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: calc((50vw*0.2)/2 - 1rem);
+    padding-bottom: 3%;
+    cursor: pointer;
+}
+.menu button .menuArrow{
+    width: 2rem;
+    height: .2rem;
+}
+.menu button .one{
+    background-color: violet;
+    margin-top: 1.25rem;
+    transform: rotateZ(30deg) translateY(.65rem);
+}
+.menu button .two{
+    background-color: violet;
+    transform: rotateZ(-30deg) translateY(-0.65rem);
+}

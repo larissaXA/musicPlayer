@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../imagens/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../imagens/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../imagens/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../imagens/favicon_io/site.webmanifest">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="musicPlayer.css">
+</head>
+<body>
+    <header>
+        <div id="themeContainer">
+            <div id="themeChild" draggable="true"></div>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li class="menuOption">
+                        <div class="menuImg"><img src="https://img.icons8.com/android/24/000000/search.png"/></div>
+                        <div class="menuLabel">Search</div>
+                    </li>
+                    <li class="menuOption">
+                        <div class="menuImg"><img src="https://img.icons8.com/android/24/000000/settings.png"/></div>
+                        <div class="menuLabel">Configurations</div>
+                    </li>
+                    <li class="menuOption">
+                        <div class="menuImg"><img src="https://img.icons8.com/android/24/000000/start.png"/></div>
+                        <div class="menuLabel">Your Library</div>
+                    </li>
+                    <li class="menuOption">
+                        <div class="menuImg"><img src="https://img.icons8.com/android/24/000000/dog-house.png"/></div>
+                        <div class="menuLabel">Home</div>
+                    </li>
+                    <li class="menuOption">
+                        <div class="menuImg"><img src="https://img.icons8.com/android/24/000000/us-dollar.png"/></div>
+                        <div class="menuLabel">Premium</div>
+                    </li>
+                </ul>
+            </nav>
+            <button id="btnMenu">
+                <div class="menuArrow one"></div>
+                <div class="menuArrow two"></div>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <button id="btnPassSong left">
+            <div class="mainArrow one"></div>
+            <div class="mainArrow two"></div>
+        </button>
+        <div class="container">
+            <div class="songBox">
+                <div class="cover">
+                    <img src="../imagens/songCover.jpg">
+                </div>
+                <div class="options">
+                    <img src="../imagens/lyric16.png" class="lyrics" onmouseout="src = '../imagens/lyric16.png'" onmouseover="src = '../imagens/lyricDT16.png'">
+                    <img src="../imagens/baixar16.png" class="download" onmouseout="src = '../imagens/baixar16.png'" onmouseover="src = '../imagens/baixarDT16.png'">
+                    <img src="../imagens/enviar16.png" class="share" onmouseout="src = '../imagens/enviar16.png'" onmouseover="src = '../imagens/enviarDT16.png'">
+                    <img src="../imagens/curtir16.png" class="like" onmouseout="src = '../imagens/curtir16.png'" onmouseover="src = '../imagens/curtirDT16.png'">
+                </div> 
+                <div class="texts">
+                    <p class="songName">I Want It That Way</p>
+                    <p class="songAuthor">Backstreet Boys</p>
+                </div>
+                <audio src="Ne-Yo Miss Independent.mp3" controls="controls" loop="loop" preload="auto" muted="muted">	
+                </audio>
+            </div>
+            <button id="add">+ Add</button> 
+        </div>
+        <button id="btnPassSong right">
+            <div class="mainArrow two"></div>
+            <div class="mainArrow one"></div>
+        </button>
+    </main>
+    <script src="musicPlayer.js"></script>
+</body>
+</html>
