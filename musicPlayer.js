@@ -14,35 +14,59 @@ mainBtnLeft.addEventListener('click',passLeft)
 var aux = true
 function showMenu(){
     if(aux === true){
-        menuBtn.firstElementChild.style.transition = '.5s'
+        menuBtn.firstElementChild.style.transition = '.3s'
         menuBtn.firstElementChild.style.transform = 'rotateZ(45deg) translateY(0.1875rem)'
-        menuBtn.lastElementChild.style.transition = '.5s'
+        menuBtn.lastElementChild.style.transition = '.3s'
         menuBtn.lastElementChild.style.transform = 'rotateZ(-45deg) translateY(0)'
         nav.style.display = 'flex'
-        setInterval(appear,300)
+        var delay = 0
+        menuListArray.reverse().forEach((menuOption) => {
+            var aux = 0
+            var timer = setTimeout(function(){
+                if(aux > 0){
+                    clearTimeout(timer)
+                }
+                menuOption.style.opacity = 1
+                menuOption.style.transitionDuration = delay/2 + 'ms'
+                menuOption.style.transitionDelay = delay + 'ms'
+                aux++
+                delay += 100
+            },0)
+        })
         aux = false
     }else{
-        menuBtn.firstElementChild.style.transition = '.5s'
+        menuBtn.firstElementChild.style.transition = '.3s'
         menuBtn.firstElementChild.style.transform = 'rotateZ(30deg) translateY(.65rem)'
-        menuBtn.lastElementChild.style.transition = '.5s'
+        menuBtn.lastElementChild.style.transition = '.3s'
         menuBtn.lastElementChild.style.transform = 'rotateZ(-30deg) translateY(-0.65rem)'
         nav.style.display = 'none'
-        menuListArray.forEach((menuOption) => menuOption.style.opacity = '0')
+        menuListArray.reverse().forEach((menuOption) => {
+            menuOption.style.opacity = 0
+        })
         aux = true
     }
 }
-var i = menuListArray.length - 1
-function appear(){
-    menuListArray[i].style.opacity = '1'
-    i--
+function opacity(){
+
 }
 
-var scroll = 0
+var scrolling = 0
+var count = 0
 function passRight(){
-    scroll += 480
-    container.scroll(scroll,0)
+    if(count == container.childElementCount - 1){
+        scrolling = scrolling
+    }else{
+        scrolling += 478
+        count++
+    }
+    container.scroll(scrolling,0)
 }
 function passLeft(){
-    scroll -= 480
-    container.scroll(scroll,0)
+    if(count == 0){
+        scrolling = scrolling
+    }else{
+        scrolling -= 478
+        count--
+    }
+    container.scroll(scrolling,0)
 }

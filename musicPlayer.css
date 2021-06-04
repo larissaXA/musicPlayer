@@ -9,11 +9,11 @@ body{
     width: 100%;
     /* overflow: hidden; */
     background-color: #c71585;
-    background-image: linear-gradient(0deg, #c71585 0%, #000000 95%);
+    background-image: linear-gradient(0deg, #000000 0%, #c71585 95%);
 }
 
 header{
-    background-color: olive;
+    background-color: transparent;
     width: 100%;
     height: 10vh;
     position: relative;
@@ -31,6 +31,7 @@ header{
     left: calc((10vh/2) - 1.5vw);
     display: grid;
     place-items: center;
+    cursor: pointer;
 }
 #themeChild{
     background-color: yellow;
@@ -40,7 +41,7 @@ header{
 }
 
 .menu{
-    background-color: yellow;
+    background-color: transparent;
     height: 100%;
     width: 50vw;
     position: relative;
@@ -50,7 +51,7 @@ header{
 .menu nav{
     height: 100%;
     width: 80%;
-    background-color: tomato;
+    background-color: transparent;
     display: none;
 }
 .menu nav ul{
@@ -62,7 +63,7 @@ header{
     gap: 1%;
 }
 .menu nav ul li{
-    background-color: teal;
+    background-color: transparent;
     height: 100%;
     width: 100%;
     display: flex;
@@ -76,7 +77,7 @@ header{
 }
 .menu nav ul li div{
     transition: all .3s ease-in;
-    background-color: thistle;
+    background-color: transparent;
     height: fit-content;
     width: fit-content;
     transform : translateY(10px);
@@ -85,20 +86,21 @@ header{
     height: 1.4rem;
 }
 .menu nav ul li .menuLabel{
-    transform : translateY(10px);
+    transform : translateY(0);
     opacity: 0;
 }
 .menu nav ul li:hover .menuImg{
     transition: all .3s ease-in;
     transform: translateY(0);
+    /* filter: invert(20%) brightness(150%); */
 }
 .menu nav ul li:hover .menuLabel{
     transition: all .3s ease-in;
-    opacity: 1;
+    opacity: inherit;
 }
 
 .menu button{
-    background-color: turquoise;
+    background-color: transparent;
     height: 100%;
     width: fit-content;
     outline: none;
@@ -113,12 +115,12 @@ header{
     height: .2rem;
 }
 .menu button .one{
-    background-color: violet;
+    background-color: rgb(255, 200, 255);
     margin-top: 1.25rem;
     transform: rotateZ(30deg) translateY(.65rem);
 }
 .menu button .two{
-    background-color: violet;
+    background-color: rgb(255, 200, 255);
     transform: rotateZ(-30deg) translateY(-0.65rem);
 }
 
@@ -128,14 +130,13 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10vw;
+    gap: 8vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .container{
     height: 30rem;
     width: 30rem;
-    border: 1px solid transparent;
     display: flex;
     align-items: center;
     overflow-x:hidden;
@@ -182,10 +183,12 @@ main{
     width: 70%;
     display: grid;
     place-items: center;
-    color: mediumvioletred;
+    color: magenta;
     text-shadow: 1px 1px 2px black;
     text-transform: capitalize;
     font-style: oblique;
+    letter-spacing: 1px;
+    word-spacing: 2px;
     margin-bottom: 3%;
 }
 .songName{
@@ -194,14 +197,58 @@ main{
 .songAuthor{
     font-size: 130%;
 }
-
 audio{
     width: 70%;
     height: 10%;
 }
 
+.addSong{
+    height: 100%;
+    width: 100%;
+    flex:none;
+    display: grid;
+    place-items: center;
+}
+#add{
+    width: fit-content;
+    height: fit-content;
+    font-size: 200%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:transparent;
+    color: rgb(255,200,255);
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px black;
+    border: .2rem solid rgb(255,200,255);
+    border-radius: 2.5rem;
+    word-spacing: 1rem;
+    letter-spacing: 1px;
+    padding: 3% 6%;
+    cursor: pointer;
+}
+#add:hover{
+    transition-duration: 300ms;
+    border: .2rem solid rgb(255, 200, 255);
+    color: rgb(255, 200, 255);
+    text-shadow: 0 0 .4rem mediumvioletred, 0 0 .4rem mediumvioletred;
+    box-shadow: 0 0 .7rem mediumvioletred,inset 0 0 .7rem mediumvioletred;
+}
+
 main button{
-    background-color: chartreuse;
-    height: 10vw;
-    width: 10vw;
+    background-color: transparent;
+    height: 8.2rem;
+    width:8.2rem;
+    border-top: .5rem solid rgb(255, 200, 255);
+    border-left: .5rem solid rgb(255, 200, 255);
+    border-bottom: none;border-right: none;
+    cursor: pointer;
+}
+main button:hover{
+    transition-duration: 300ms;
+    box-shadow: -.3rem -.3rem 0.4rem -3px mediumvioletred,inset .3rem .3rem 0.4rem -3px mediumvioletred;
+}
+main button#right{
+    transform: rotate(135deg);
+}
+main button#left{
+    transform: rotate(-45deg);
 }
