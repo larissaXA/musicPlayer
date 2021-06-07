@@ -7,7 +7,6 @@
 body{
     height: 100vh;
     width: 100%;
-    /* overflow: hidden; */
     background-color: #c71585;
     background-image: linear-gradient(0deg, #000000 0%, #c71585 95%);
 }
@@ -22,8 +21,8 @@ header{
     align-items: center;
 }
 #themeContainer{
-    background-color: orangered;
-    border: .3rem solid yellow;
+    background-color: transparent;
+    border: .3rem solid lightseagreen;
     border-radius: 100%;
     height: 70%;
     width: calc(0.7*10vh);
@@ -33,11 +32,17 @@ header{
     place-items: center;
     cursor: pointer;
 }
+#themeContainer.addSongSeagreen{
+    border-color: mediumvioletred;
+}
 #themeChild{
-    background-color: yellow;
+    background-color: cornsilk;
     border-radius: 100%;
     height: 70%;
     width: 70%;
+}
+#themeContainer.addSongSeagreen #themeChild{
+    background-color: black;
 }
 
 .menu{
@@ -92,7 +97,6 @@ header{
 .menu nav ul li:hover .menuImg{
     transition: all .3s ease-in;
     transform: translateY(0);
-    /* filter: invert(20%) brightness(150%); */
 }
 .menu nav ul li:hover .menuLabel{
     transition: all .3s ease-in;
@@ -115,13 +119,24 @@ header{
     height: .2rem;
 }
 .menu button .one{
-    background-color: rgb(255, 200, 255);
+    background-color: rgba(255, 255, 255, 0.7);
     margin-top: 1.25rem;
     transform: rotateZ(30deg) translateY(.65rem);
 }
 .menu button .two{
-    background-color: rgb(255, 200, 255);
+    background-color: rgba(255, 255, 255, 0.7);
     transform: rotateZ(-30deg) translateY(-0.65rem);
+}
+.menu button.addSongSeagreen .one,.menu button.addSongSeagreen .two{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.menu button:hover .one,.menu button:hover .two{
+    background-color: rgb(255,200,255);
+    transition-duration: 300ms;
+    box-shadow: 0 0 .3rem white;
+}
+.menu button.addSongSeagreen:hover .one,.menu button.addSongSeagreen:hover .two{
+    background-color: cornsilk;
 }
 
 main{
@@ -202,7 +217,7 @@ audio{
     height: 10%;
 }
 
-.addSong{
+#addSong{
     height: 100%;
     width: 100%;
     flex:none;
@@ -225,30 +240,168 @@ audio{
     padding: 3% 6%;
     cursor: pointer;
 }
+/* seagreen */
+#addSong.addSongSeagreen #add{
+    color: lightseagreen;
+    text-shadow: 1px 1px 2px cornsilk;
+    box-shadow: 1px 1px 2px cornsilk;
+    border: .2rem solid lightseagreen;
+}
 #add:hover{
     transition-duration: 300ms;
-    border: .2rem solid rgb(255, 200, 255);
-    color: rgb(255, 200, 255);
     text-shadow: 0 0 .4rem mediumvioletred, 0 0 .4rem mediumvioletred;
     box-shadow: 0 0 .7rem mediumvioletred,inset 0 0 .7rem mediumvioletred;
+}
+/* seagreen */
+#addSong.addSongSeagreen #add:hover{
+    border-color: turquoise;
+    color: turquoise;
+    text-shadow: 0 0 .4rem cornsilk, 0 0 .4rem cornsilk;
+    box-shadow: 0 0 .7rem cornsilk,inset 0 0 .7rem cornsilk;
 }
 
 main button{
     background-color: transparent;
     height: 8.2rem;
     width:8.2rem;
-    border-top: .5rem solid rgb(255, 200, 255);
-    border-left: .5rem solid rgb(255, 200, 255);
+    border-top: .5rem solid rgba(255, 255, 255, 0.5);
+    border-left: .5rem solid rgba(255, 255, 255,0.5);
     border-bottom: none;border-right: none;
     cursor: pointer;
 }
 main button:hover{
+    border-top: .5rem solid rgb(255, 200, 255);
+    border-left: .5rem solid rgb(255, 200, 255);
     transition-duration: 300ms;
-    box-shadow: -.3rem -.3rem 0.4rem -3px mediumvioletred,inset .3rem .3rem 0.4rem -3px mediumvioletred;
+    box-shadow: -.4rem -.4rem 0.5rem -3px mediumvioletred,inset .4rem .4rem 0.5rem -3px mediumvioletred;
+}
+main button.mainBtnSeagreen{
+    border-top: .5rem solid rgba(0, 0, 0, 0.1);
+    border-left: .5rem solid rgba(0, 0, 0, 0.1);
+}
+main button.mainBtnSeagreen:hover{
+    border-top: .5rem solid turquoise;
+    border-left: .5rem solid turquoise;
+    transition-duration: 300ms;
+    box-shadow: -.5rem -.5rem 0.6rem -3px  cornsilk,inset .5rem .5rem 0.5rem -3px cornsilk;
 }
 main button#right{
     transform: rotate(135deg);
 }
 main button#left{
     transform: rotate(-45deg);
+}
+
+#addSongBox{
+    background-color: rgba(255,200,255,.2);
+    height: 70%;
+    width: 70%;
+    flex: none;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    padding: 0 5%;
+    border-radius: 1rem;
+    box-shadow:  .3rem .3rem 0.6rem -3px rgba(0, 0, 0, 0.5);
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox{
+    background-color: rgba(200, 231, 230,.5);
+}
+#addSongBox h3{
+    color: rgb(255,200,255);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    text-transform: capitalize;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 180%;
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox h3{
+    color: lightseagreen;
+    text-shadow: 3px 3px 4px rgb(200, 231, 230);
+}
+#addSongBox input{
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: .2rem .2rem .3rem -3px rgba(0, 0, 0, 0.5);
+    color: rgb(255,200,255);
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    border: none;
+    height: 10%;
+    border-radius: .5rem;
+    padding: 0 2%;
+    font-size: 100%;
+    font-weight: 600;
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox input{
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: .2rem .2rem .3rem -3px rgba(0, 0, 0, 0.3);
+    color: lightseagreen;
+}
+#addSongBox input::placeholder{
+    color: rgba(255,200,255,.7);
+    font-size: 90%;
+    font-weight: 500;
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox input::placeholder{
+    color: rgba(32, 178, 171, 0.8);
+}
+#addSongBox input:hover{
+    border: .1rem solid rgb(255,200,255);
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox input:hover{
+    border: .1rem solid lightseagreen;
+}
+#addSongBox input:focus{
+    outline: none;
+    border: .1rem solid rgb(128, 128, 128);
+    box-shadow: none;
+}
+/* seagreen */
+#addSong.addSongSeagreen #addSongBox input:focus{
+    border: .1rem solid rgba(128, 128, 128,.5);
+}
+#addBoxBtn{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#addBoxBtn button{
+    background-color:rgb(255,200,255);
+    height: fit-content;
+    padding: 5% 0;
+    font-size: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    border: none;
+    border-radius: .5rem;
+    transform: none;
+}
+#addBoxBtn button:hover{
+    box-shadow: none;
+    background-color: transparent;
+    border: .2rem solid rgb(255,200,255);
+    padding: calc(5% - 0.2rem) 0;
+}
+/* seagreen */
+#addSong.addSongSeagreen section #addBoxBtn button{
+    background-color: lightseagreen ;
+}
+/* seagreen */
+#addSong.addSongSeagreen section #addBoxBtn button:hover{
+    background-color: transparent;
+    border: .2rem solid lightseagreen;
+}
+
+
+.delete{
+    filter: invert(50%);
 }
