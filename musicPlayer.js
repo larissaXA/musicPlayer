@@ -90,16 +90,27 @@ function passLeft(){
 
 function addNewSong(){
     var clone = document.getElementsByClassName('songBox')[0].cloneNode(true)
+    clone.style.display = 'flex'
+    clone.getElementsByClassName('delete')[0].addEventListener('click',deleteSongBox)
     var texts = clone.getElementsByClassName('texts')[0]
     var songName = texts.getElementsByClassName('songName')[0]
     var songSinger = texts.getElementsByClassName('songAuthor')[0]
     songName.innerHTML = inputSongName.value
+    inputSongName.value = ''
     songSinger.innerHTML = inputSongSinger.value
+    inputSongSinger.value = ''
     var addSongBox = document.getElementById('addSongBox')
     addSongBox.style.display = 'none'
     addBtn.style.display = 'flex'
     var addSong = document.getElementById('addSong')
     container.insertBefore(clone,addSong)
+}
+
+function deleteSongBox(){
+    if(confirm('Tem certeza que deseja excluir essa música de sua playlist?')){
+        this.parentElement.parentElement.parentElement.remove()
+    }
+    
 }
 
 function changeTheme(){
@@ -120,12 +131,3 @@ function changeTheme(){
 
     theme.classList.contains('addSongSeagreen') ? theme.classList.remove('addSongSeagreen') : theme.classList.add('addSongSeagreen')
 }
-
-var del = document.getElementsByClassName('delete')
-Array.from(del).forEach((value) => {
-    value.addEventListener('click',function(){
-        if(confirm('Tem certeza que deseja excluir a música de sua playlist?')){
-            value.parentElement.parentElement.parentElement.remove()
-        }
-    })
-})

@@ -54,7 +54,7 @@
             <div class="mainArrow two"></div>
         </button>
         <div class="container">
-            <div class="songBox">
+            <div id="first" class="songBox">
                 <div class="img-opt">
                     <div class="cover">
                         <img src="../imagens/songCover.jpg">
@@ -74,53 +74,12 @@
                 <audio src="Ne-Yo Miss Independent.mp3" controls="controls" loop="loop" preload="auto" muted="muted">	
                 </audio>
             </div>
-            <div class="songBox">
-                <div class="img-opt">
-                    <div class="cover">
-                        <img src="../imagens/songCover.jpg">
-                    </div>
-                    <div class="options">
-                        <img src="../imagens/lyric16.png" class="lyrics" onmouseout="src = '../imagens/lyric16.png'" onmouseover="src = '../imagens/lyricDT16.png'">
-                        <img src="../imagens/baixar16.png" class="download" onmouseout="src = '../imagens/baixar16.png'" onmouseover="src = '../imagens/baixarDT16.png'">
-                        <img src="../imagens/enviar16.png" class="share" onmouseout="src = '../imagens/enviar16.png'" onmouseover="src = '../imagens/enviarDT16.png'">
-                        <img src="../imagens/curtir16.png" class="like" onmouseout="src = '../imagens/curtir16.png'" onmouseover="src = '../imagens/curtirDT16.png'">
-                        <img class="delete" src="https://img.icons8.com/metro/16/000000/delete.png"/>
-                    </div> 
-                </div>
-                <div class="texts">
-                    <p class="songName">I want it that way</p>
-                    <p class="songAuthor">Backstreet Boys</p>
-                </div>
-                <audio src="Ne-Yo Miss Independent.mp3" controls="controls" loop="loop" preload="auto" muted="muted">	
-                </audio>
-            </div>
-            <div class="songBox">
-                <div class="img-opt">
-                    <div class="cover">
-                        <img src="../imagens/songCover.jpg">
-                    </div>
-                    <div class="options">
-                        <img src="../imagens/lyric16.png" class="lyrics" onmouseout="src = '../imagens/lyric16.png'" onmouseover="src = '../imagens/lyricDT16.png'">
-                        <img src="../imagens/baixar16.png" class="download" onmouseout="src = '../imagens/baixar16.png'" onmouseover="src = '../imagens/baixarDT16.png'">
-                        <img src="../imagens/enviar16.png" class="share" onmouseout="src = '../imagens/enviar16.png'" onmouseover="src = '../imagens/enviarDT16.png'">
-                        <img src="../imagens/curtir16.png" class="like" onmouseout="src = '../imagens/curtir16.png'" onmouseover="src = '../imagens/curtirDT16.png'">
-                        <img class="delete" src="https://img.icons8.com/metro/16/000000/delete.png"/>
-                    </div> 
-                </div>
-                <div class="texts">
-                    <p class="songName">Paradise</p>
-                    <p class="songAuthor">Coldplay</p>
-                </div>
-                <audio src="Ne-Yo Miss Independent.mp3" controls="controls" loop="loop" preload="auto" muted="muted">	
-                </audio>
-                
-            </div>
             <div id="addSong">
                 <button id="add">+ Add</button>
                 <section id="addSongBox">
                     <h3>New Song</h3>
-                    <input type="text" autocomplete="off" id="inputSongName" placeholder="Song name">
-                    <input type="text" autocomplete="off" id="inputSongSinger" placeholder="Singer/s">
+                    <input type="text"  autocomplete="off" id="inputSongName" placeholder="Song name">
+                    <input type="text" maxlength="15" autocomplete="off" id="inputSongSinger" placeholder="Singer/s">
                     <div id="addBoxBtn">
                         <button id="done">Done</button>
                         <button id="cancel">Cancel</button>
